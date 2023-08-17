@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 17:33:58 by agrimald          #+#    #+#              #
-#    Updated: 2023/08/16 19:01:38 by agrimald         ###   ########.fr        #
+#    Updated: 2023/08/17 20:44:21 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = push_swap
 ARC = ar rcs
 RM = rm -f
 HEADER = push_swap.h
-SRC = ft_strlen ft_atol checker_space
+SRC = ft_strlen.c ft_atol.c checker_space.c
 
 OBJ = $(SRC: .c=.o)
 

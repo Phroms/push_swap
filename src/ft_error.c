@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:35:18 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/17 22:19:03 by agrimald         ###   ########.fr       */
+/*   Created: 2023/08/17 17:35:38 by agrimald          #+#    #+#             */
+/*   Updated: 2023/08/17 19:42:29 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+void	ft_error(void)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	if (argc < 1 || argv[1][0] < 1)
-		return (1);
+	write(2, "Error\n", 6);
+	exit (0);
 }
-
-/*int main ()
-{
-	char o[] = "56";
-	printf("%lld\n", ft_atol(o));
-}*/

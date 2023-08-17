@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:12:42 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/16 20:28:01 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/17 20:52:02 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ int checker_space(int c)
 {
 	if (c == '\f' || c == '\n' || c == '\r' \
 			|| c == '\t' || c == '\v' || c == ' ')
+		return (1);
+	return (0);
+}
+
+int ft_isdit(int c)
+{
+	if ((c > 47) && (c < 58))
 		return (1);
 	return (0);
 }
