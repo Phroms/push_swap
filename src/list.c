@@ -6,17 +6,17 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 20:06:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/17 20:33:35 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/21 21:01:29 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(int data)
+t_stack	*ft_lstnew(int n)
 {
-	t_list	*new_list;
+	t_stack	*new_list;
 
-	new_list = malloc(sizeof(t_list));
+	new_list = malloc(sizeof(t_stack));
 	if (!new_list)
 		return (NULL);
 	new_list -> content = content;
@@ -50,7 +50,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 
 t_stack	*ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*nodo;
+	t_stack	*nodo;
 
 	if (!*lst)
 	{
