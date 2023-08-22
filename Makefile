@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/16 17:33:58 by agrimald          #+#    #+#              #
-#    Updated: 2023/08/17 20:44:21 by agrimald         ###   ########.fr        #
+#    Created: 2023/08/22 20:37:42 by agrimald          #+#    #+#              #
+#    Updated: 2023/08/22 20:42:00 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -MMD
-NAME = push_swap 
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror - g -MMD
+NAME = push_swap
 ARC = ar rcs
 RM = rm -f
 HEADER = push_swap.h
-SRC = ft_strlen.c ft_atol.c checker_space.c
+SRC = 
 
 OBJ = $(SRC: .c=.o)
 
-all: $(NAME)
+all = $(NAME)
 
 $(NAME): $(OBJS)
 		$(ARC) $(NAME) $(OBJS)
