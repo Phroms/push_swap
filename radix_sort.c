@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list2.c                                            :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:55:48 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/21 19:24:27 by agrimald         ###   ########.fr       */
+/*   Created: 2023/08/25 21:21:59 by agrimald          #+#    #+#             */
+/*   Updated: 2023/08/25 21:28:20 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
+void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	new -> next = *lst;
-	*lst = new;
-}
+	t_stack	*tmp;
+	int		size;
+	int		bit;
 
-void	ft_lstclear(t_stack **lst, void (*del)(void *))
-{
-	t_list *nodo;
-	t_list *middlemans;
-
-	nodo = *lst;
-	while (nodo != NULL)
+	tmp = *stack_a;
+	bit = 1;
+	while (stack_sorted(stack_a) != 1)
 	{
-		middlemans = nodo -> next;
-		ft_lstdelone(nodo, del);
-		nodo = middlemans;
+		size = stack_size(*stack_a);
+		while (size > 0 && tmp != NULL)
+		{
+			if (tmp->idx & bit)
+				ra(stack_a);
+			else
+				pb(stack_b, stack_a);
+			tmp = *stack_a;
+			size--;
+		}
+		while (stack_size(*stack_b))
+			pa(stack_a, stack_b);
+		tmp = *stack_a;
+		bit = bit << 1;
+		size--;
 	}
 }

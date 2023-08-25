@@ -5,86 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 20:37:02 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/22 21:28:35 by agrimald         ###   ########.fr       */
+/*   Created: 2023/08/25 20:33:54 by agrimald          #+#    #+#             */
+/*   Updated: 2023/08/25 21:20:45 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_Swap.h"
 
-t_contet	*ini_contet(int stacks)
+void	sort_index(t_stack **stack_a, t_contet *data)
 {
-	t_contet *data = NULL;
-	int i;
+	t_stack *node;
+	t_stack	*max;
+	t_stack *min;
 
-	data = malloc(sizeof(t_contet));
-	if (!data)
-		return (NULL);
-	data->arr = malloc(stacks * sizeof(long long));
-	if (data->arr == NULL)
+	node = stack_a;
+	max = node_max(stack_a);
+	min = node_min(stack_a);
+	while (node)
 	{
-		free(data);
-		return (data);
+		if (node->index == -1)
+		{
+			if (node->value == min->value)
+			{
+				node->index = data->idx;
+				data->idx++;
+			}
+			if (node->value == max->value)
+			{
+				node->idx = data->elementos;
+				data->elementos--;
+			}
+		}
+		node = node->next;
 	}
-	i = -1;
-	while (++i < stacks)
-		data->arr[i] = 0;
-	data->elementos = stacks;
-	data->big = INT_MIN;
-	data->small = INT_MAX;
-	data->sortex = 0;
-	data->index = 0;
-	return (data);
 }
 
-int sorted(t_contet *data)
+t_stack *node_max(t_contet **stack)
 {
-	int i;
-
-	i = 0;
-	while (i < data->elemtos - 1)
-	{
-		if (data->arr[i] < data->arr[i] + 1)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
-}
-
-int	min_dex(t_stack **stack_a)
-{
+	t_stack	*max;
 	t_stack	*tmp;
-	int min;
-
-	min = INT_MAX;
-	tmp = stack_a;
+	
+	tmp = *stack;
+	max = tmp;
 	while (tmp)
 	{
 		if (tmp->index == -1)
 		{
-			if (tmp->value < min)
-				min = tmp->value;
+			if (tmp->value < max->value)
+				max = tmp;
+		}
+		tmp = tmp->next;
+	}
+	return (max);
+}
+
+t_stack	*node_min(t_contet **stack)
+{
+	t_stack *min;
+	t_stack	*tmp;
+
+	tmp = *stack;
+	min = tmp;
+	while (tmp)
+	{
+		if (tmp->index == -1)
+		{
+			if (tmp->value < min->value)
+				min = tmp;
 		}
 		tmp = tmp->next;
 	}
 	return (min);
 }
 
-int in_sorted(t_stack **stack_a, int elementos)
+int	idx_sorted(t_node **stack_a)
 {
-	t_stack	*nodo;
-	int 	i;
+	t_stack *node;
 
-	nodo = stack_a;
-	i = 0;
-	while (nodo)
+	node = *stack_a;
+	while (node)
 	{
-		if (nodo->index != elementos)
-			i++;
-		nodo = nodo->next;
+		if (node->idx != -1)
+			node = node->next;
+		else
+			return (1);
 	}
-	if (i != elementos)
-		return (0);
-	return (1);
+	return (0);
 }

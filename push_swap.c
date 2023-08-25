@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 17:35:18 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/21 19:27:38 by agrimald         ###   ########.fr       */
+/*   Created: 2023/08/25 19:10:47 by agrimald          #+#    #+#             */
+/*   Updated: 2023/08/25 21:41:39 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@
 
 int main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
+	if (argc < 3) || (argv[1] == ' ')
+		ft_error ();
 
-	if (argc < 1 || argv[1][0] < 1)
-		return (1);
 }
-
-/*int main ()
-{
-	char o[] = "56";
-	printf("%lld\n", ft_atol(o));
-}*/
