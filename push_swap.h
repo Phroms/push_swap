@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/28 15:35:15 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/28 18:28:33 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,20 @@ int		idx_sorted(t_node **stack_a);
 
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 
-	/* Instrucciones */
+	/* Instrucciones Swap */
+
+int	swap(t_stack **stack);
+int sa(t_stack **stack_a);
+int sb(t_stack **stack_b);
+int	ss(t_stack **stack_a, t_stack **stack_b);
+
+	/* Instrucciones Push */
+
+int push(t_stack **stack_to, t_stack **stack_from);
+int pa(t_stack **stack_a);
+int pb(t_stack **stack_b);
+
+	/* Instrucciones Rotate */
 
 int ra(t_stack **stack_a);
 int rra(t_stack **stack_a);
