@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/25 21:45:17 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/28 15:35:15 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 typedef struct	s_stack
 {
-	int value;
-	int idx;
+	int value; // es el valor del nodo;
+	int idx; // es index y es el indice del nodo;
 	struct	s_stack *next;
 }t_stack;
 
@@ -88,3 +88,7 @@ int put_stack_top_a(t_stack **stack_a, t_stack *node);
 int put_stack_top_b(t_stack **stack_b, t_stack *node);
 int stack_sorted(t_stack **stack);
 t_node *stack_end(t_stack **stack);
+
+	/* Stacks */
+
+int size_stack(t_stack *stack);
