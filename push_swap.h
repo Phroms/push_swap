@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/28 18:28:33 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/29 18:17:20 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ int pa(t_stack **stack_a);
 int pb(t_stack **stack_b);
 
 	/* Instrucciones Rotate */
-
+int	rotate(t_stack **stack);
+int	reverse_rot(t_stack **stack);
 int ra(t_stack **stack_a);
 int rra(t_stack **stack_a);
 int rb(t_stack **stack_b);
@@ -104,4 +105,5 @@ t_node *stack_end(t_stack **stack);
 
 	/* Stacks */
 
-int size_stack(t_stack *stack);
+void	ft_stack_init(t_stack **stack_a, t_contet **data);
+int		size_stack(t_stack *stack);

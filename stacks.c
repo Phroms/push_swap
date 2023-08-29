@@ -6,11 +6,31 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:47:43 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/28 14:50:20 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/29 18:17:22 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_stack_init(t_stack **stack_a, t_contet *data)
+{
+	int i;
+	int nbr;
+
+	i = 0;
+	while (i < data->elementos)
+	{
+		nbr = (int)data->arr[i];
+		if (!(addnode_back(stack_a, new_node(nbr, -1))))
+		{
+			free_a(stack_a);
+			return ;
+		}
+		i++;
+	}
+	while (idx_sorted(stack_a))
+		sort_index(stack_a, data);
+}
 
 int	size_stack(t_stack *stack)
 {

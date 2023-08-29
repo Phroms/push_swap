@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 21:37:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/28 18:28:29 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:42:57 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,45 @@ int pb(t_stack **stack_b)
 }
 
 	/* Rotate */ 
-int rotate(t_stack **stack_a, t_stack **stack b);
-int reverse_rot(t_stack **stack_a, t_stack **stack_b);
+
+int rotate(t_stack **stack)
+{
+	t_stack	*head;
+	t_stack	*tail;
+
+	if (size_stack(*stack) < 2)
+		return (-1);
+	head = *stack;
+	tail = stack_end(*stack);
+	*stack = head->next;
+	tail->next = head;
+	head->next = NULL;
+	return (0);
+}
+
+int reverse_rot(t_stack **stack)
+{
+	t_stack *head;
+	t_stack	*tail;
+
+	if (size_stack(*stack) < 2)
+		return (-1);
+	head = *stack;
+	tail = stack_end(*stack);
+	while (head)
+	{
+		if (head->next->next)
+		{
+			head->next = NULL;
+			break ;
+		}
+		head = head->next;
+	}
+	tail->next = *stack;
+	*stack = tail;
+	return (0);
+}
+
 int ra(t_stack **stack_a)
 {
 	if (rotate(stack_a) == 1)
