@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 15:22:30 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/30 22:56:18 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct	s_contet
 	int	smallest;
 	int sorted;
 	int idx;
-}t_contet
+}t_contet;
 
 	/* Comienzo del push_swap */
 
@@ -69,7 +69,7 @@ void	free_data(t_contet *data);
 void	sort_index(t_stack **stack_a, t_contet *data);
 t_stack *node_max_i(t_contet **stack);
 t_stack *node_min_i(t_contet **stack);
-int		idx_sorted(t_node **stack_a);
+int		idx_sorted(t_stack**stack_a);
 
 	/* Radix_sort */
 
@@ -89,6 +89,7 @@ int pa(t_stack **stack_a);
 int pb(t_stack **stack_b);
 
 	/* Instrucciones Rotate */
+
 int	rotate(t_stack **stack);
 int	reverse_rot(t_stack **stack);
 int ra(t_stack **stack_a);
@@ -101,7 +102,7 @@ int rrb(t_stack **stack_b);
 int put_stack_top_a(t_stack **stack_a, t_stack *node);
 int put_stack_top_b(t_stack **stack_b, t_stack *node);
 int stack_sorted(t_stack **stack);
-t_node *stack_end(t_stack **stack);
+t_stack *stack_end(t_stack **stack);
 
 	/* Stacks */
 
@@ -123,3 +124,5 @@ void	add_back(t_stack **stack, t_stack *new);
 t_stack	*stack_last(t_stack *stack);
 t_stack	node_max(t_stack **stack);
 t_stack	node_min(t_stack **stack);
+
+#endif
