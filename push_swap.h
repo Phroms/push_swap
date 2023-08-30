@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/29 18:17:20 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/30 15:22:30 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	free_data(t_contet *data);
 	/* Index */
 
 void	sort_index(t_stack **stack_a, t_contet *data);
-t_stack *node_max(t_contet **stack);
-t_stack *node_min(t_contet **stack);
+t_stack *node_max_i(t_contet **stack);
+t_stack *node_min_i(t_contet **stack);
 int		idx_sorted(t_node **stack_a);
 
 	/* Radix_sort */
@@ -107,3 +107,19 @@ t_node *stack_end(t_stack **stack);
 
 void	ft_stack_init(t_stack **stack_a, t_contet **data);
 int		size_stack(t_stack *stack);
+
+	/* Sort */
+
+void	sort(t_stack **stack_a, t_stack **stack_b);
+void	sort2(t_stack **stack_a);
+void	sort3(t_stack **stack_a);
+void	sort4(t_stack **stack_a, t_stack **stack_b);
+void	sort5(t_stack **stack_a, t_stack **stack_b);
+
+	/* Nodes */
+
+t_stack *lst_new(void *contet);
+void	add_back(t_stack **stack, t_stack *new);
+t_stack	*stack_last(t_stack *stack);
+t_stack	node_max(t_stack **stack);
+t_stack	node_min(t_stack **stack);

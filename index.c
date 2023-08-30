@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 20:33:54 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/25 21:20:45 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:37:57 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sort_index(t_stack **stack_a, t_contet *data)
 	}
 }
 
-t_stack *node_max(t_contet **stack)
+t_stack *node_max_i(t_contet **stack)
 {
 	t_stack	*max;
 	t_stack	*tmp;
@@ -59,7 +59,7 @@ t_stack *node_max(t_contet **stack)
 	return (max);
 }
 
-t_stack	*node_min(t_contet **stack)
+t_stack	*node_min_i(t_contet **stack)
 {
 	t_stack *min;
 	t_stack	*tmp;
