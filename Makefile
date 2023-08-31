@@ -6,24 +6,24 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 18:10:11 by agrimald          #+#    #+#              #
-#    Updated: 2023/08/30 22:57:27 by agrimald         ###   ########.fr        #
+#    Updated: 2023/08/31 18:31:29 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME: push_swap
-CFLAGS: -Wall -Werror -Wextra -g -MD
-HEADER: push_swap.h
-SRC: check.c data.c free.c index.c instrucciones.c nodes.c push_swap.c \
+NAME = push_swap
+CFLAGS = -Wall -Werror -Wextra -g -MMD
+PUSH = push_swap.h
+SRC = check.c data.c free.c index.c instrucciones.c nodes.c push_swap.c \
 	put_stacks.c radix_sort.c sort.c stacks.c
 
-OBJECTS: $(SRC:.c=.o)
-DEPS: $(patsubst%.o,%.d,$(OBJECTS))
+OBJECTS = $(SRC:.c=.o)
+DEPS = $(patsubst%.o,%.d,$(OBJECTS))
 
 all: ${NAME}
 
 %.o: %.c
 	@printf "\rCompiling push_swap: $< \n"
-	$(CC) -c ${CFLAGS} $< -O $@
+	$(CC) -c ${CFLAGS} $< -o $@
 
 ${NAME}: ${OBJECTS} ${PUSH} Makefile
 		cc ${CFLAGS} -o ${NAME} ${OBJECTS}

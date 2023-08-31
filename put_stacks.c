@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 21:34:30 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 15:02:16 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:51:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	put_stack_top_b(t_stack **stack_b, t_stack *node)
 
 int stack_sorted(t_stack **stack)
 {
-	t_node *node;
+	t_stack *node;
 
 	node = *stack;
 	while (node && node->next)
@@ -44,9 +44,9 @@ int stack_sorted(t_stack **stack)
 	return (1);
 }
 
-t_node *stack_end(t_stack **stack)
+t_stack *stack_end(t_stack **stack)
 {
-	t_node *tmp;
+	t_stack *tmp;
 
 	tmp = *stack;
 	while (tmp->next)

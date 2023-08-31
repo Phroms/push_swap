@@ -6,22 +6,23 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:02:23 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 15:38:54 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:42:15 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*lst_new(void *contet)
+t_stack	*lst_new(int idx, int value)
 {
-	t_list *new_list;
+	t_stack *new_stack;
 
-	new_list = malloc(sizeof(t_stack));
-	if (!new_list)
+	new_stack = malloc(sizeof(t_stack));
+	if (!new_stack)
 		return (NULL);
-	newlist->contet = contet;
-	new_list->next = NULL;
-	return (new_list);
+	new_stack->idx = idx;
+	new_stack->value = value;
+	new_stack->next = NULL;
+	return (new_stack);
 }
 
 void	add_back(t_stack **stack, t_stack *new)
@@ -61,7 +62,7 @@ t_stack	node_max(t_stack **stack)
 			max = tmp;
 		tmp = tmp->next;
 	}
-	return (max);
+	return (*max);
 }
 
 t_stack	node_min(t_stack **stack)
@@ -77,5 +78,5 @@ t_stack	node_min(t_stack **stack)
 			min = tmp;
 		tmp = tmp->next;
 	}
-	return (min);
+	return (*min);
 }

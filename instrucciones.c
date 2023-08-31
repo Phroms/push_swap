@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 21:37:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/29 17:42:57 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:32:46 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	swap(t_stack **stack)
 	if (size_stack(*stack) < 2)
 		return (1);
 	top = *stack;
-	next = top->value;
+	next = top->next;
 	tmp_val = top->value;
 	tmp_idx = top->idx;
 	top->idx = next->idx;
@@ -46,13 +46,13 @@ int sb(t_stack **stack_b)
 {
 	if (swap(stack_b) == 1)
 		return (1);
-	write(1, "sb\n, 3");
+	write(1, "sb\n", 3);
 	return (0);
 }
 
 int ss(t_stack **stack_a, t_stack **stack_b)
 {
-	if (size_stack(*stack_a) < 2 || (size_stack(stack_b) < 2))
+	if (size_stack(*stack_a) < 2 || (size_stack(*stack_b) < 2))
 		return (-1);
 	swap(stack_a);
 	swap(stack_b);
@@ -92,17 +92,17 @@ int	push(t_stack **stack_to, t_stack **stack_from)
 	return (0);
 }
 
-int pa(t_stack **stack_a)
+int pa(t_stack **stack_a, t_stack **stack_b)
 {
-	if (push(stack_a) == 1)
+	if (push(stack_a, stack_b) == 1)
 		return (1);
 	write(1, "pa\n", 3);
 	return (0);
 }
 
-int pb(t_stack **stack_b)
+int pb(t_stack **stack_b, t_stack **stack_a)
 {
-	if (push(stack_b) == 1)
+	if (push(stack_b, stack_a) == 1)
 		return (1);
 	write(1, "pb\n", 3);
 	return (0);
@@ -118,7 +118,7 @@ int rotate(t_stack **stack)
 	if (size_stack(*stack) < 2)
 		return (-1);
 	head = *stack;
-	tail = stack_end(*stack);
+	tail = stack_end(stack);
 	*stack = head->next;
 	tail->next = head;
 	head->next = NULL;
@@ -133,7 +133,7 @@ int reverse_rot(t_stack **stack)
 	if (size_stack(*stack) < 2)
 		return (-1);
 	head = *stack;
-	tail = stack_end(*stack);
+	tail = stack_end(stack);
 	while (head)
 	{
 		if (head->next->next)
@@ -152,10 +152,10 @@ int ra(t_stack **stack_a)
 {
 	if (rotate(stack_a) == 1)
 	{
-		ft_putstr("error not managed\n");
+		write(1, "error not managed\n", 18);
 		return (-1);
 	}
-	ft_putstr("ra\n");
+	write(1, "ra\n", 3);
 	return (0);
 }
 
@@ -163,7 +163,7 @@ int rra(t_stack **stack_a)
 {
 	if (reverse_rot(stack_a) == -1)
 		return (1);
-	ft_putstr("rra\n");
+	write(1,"rra\n", 4);
 	return (0);
 }
 
@@ -171,10 +171,10 @@ int rb(t_stack **stack_b)
 {
 	if (rotate(stack_b) == -1)
 	{
-		ft_putstr("error not managed\n");
+		write(1, "error not managed\n", 18);
 		return (-1);
 	}
-	ft_putstr("rb\n");
+	write(1, "rb\n", 3);
 	return (0);
 }
 
@@ -182,6 +182,6 @@ int rrb(t_stack **stack_b)
 {
 	if (reverse_rot(stack_b) == -1)
 		return (1);
-	ft_putstr("rrb\n");
+	write(1, "rrb\n", 4);
 	return (0);
 }

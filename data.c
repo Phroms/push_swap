@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:46:18 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/25 20:46:37 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:41:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_contet	*ini_contet(int stacks)
 {
-	t_contet	*datya = NULL;
+	t_contet	*data = NULL;
 	int i;
 
 	data = malloc(sizeof(t_contet));
@@ -27,13 +27,13 @@ t_contet	*ini_contet(int stacks)
 		return (data);
 	}
 	i = -1;
-	while (++i < stack)
+	while (++i < stacks)
 		data->arr[i] = 0;
-	data->elementos = nodes;
+	data->elementos = stacks;
 	data->biggest = INT_MIN;
 	data->smallest = INT_MAX;
-	data->sortex = 0;
-	data->index = 0;
+	data->sorted = 0;
+	data->idx = 0;
 	return (data);
 }
 
@@ -58,7 +58,7 @@ int min_dex(t_stack **stack_a)
 	int min;
 
 	min = INT_MAX;
-	tmp = stack_a;
+	tmp = *stack_a;
 	while (tmp)
 	{
 		if (tmp->idx == -1)
@@ -71,12 +71,12 @@ int min_dex(t_stack **stack_a)
 	return (min);
 }
 
-int in_sorted(t_stack **stack_a, int elemntos)
+int in_sorted(t_stack **stack_a, int elementos)
 {
 	t_stack *nodo;
 	int i;
 
-	nodo = stack_a;
+	nodo = *stack_a;
 	i = 0;
 	while (nodo)
 	{

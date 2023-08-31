@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 22:56:18 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:49:40 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <unistd.h>
 
 	/* Estructuras creadas */
 
@@ -67,8 +68,8 @@ void	free_data(t_contet *data);
 	/* Index */
 
 void	sort_index(t_stack **stack_a, t_contet *data);
-t_stack *node_max_i(t_contet **stack);
-t_stack *node_min_i(t_contet **stack);
+t_stack *node_max_i(t_stack **stack);
+t_stack *node_min_i(t_stack **stack);
 int		idx_sorted(t_stack**stack_a);
 
 	/* Radix_sort */
@@ -85,8 +86,8 @@ int	ss(t_stack **stack_a, t_stack **stack_b);
 	/* Instrucciones Push */
 
 int push(t_stack **stack_to, t_stack **stack_from);
-int pa(t_stack **stack_a);
-int pb(t_stack **stack_b);
+int pa(t_stack **stack_a, t_stack **stack_b);
+int pb(t_stack **stack_b, t_stack **stack_a);
 
 	/* Instrucciones Rotate */
 
@@ -119,7 +120,7 @@ void	sort5(t_stack **stack_a, t_stack **stack_b);
 
 	/* Nodes */
 
-t_stack *lst_new(void *contet);
+t_stack *lst_new(int idx, int value);
 void	add_back(t_stack **stack, t_stack *new);
 t_stack	*stack_last(t_stack *stack);
 t_stack	node_max(t_stack **stack);

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 20:20:20 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 22:18:37 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:52:16 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void	ft_free_input(t_contet *data)
 
 void	free_all(t_stack **stack_a, t_stack **stack_b, t_contet *data)
 {
-	free_a(*stack_a);
-	free_b(*stack_b);
+	free_a(stack_a);
+	free_b(stack_b);
 	free_data(data);
 }
 
 void	free_a(t_stack **stack_a)
 {
-	t_contet	*node = NULL;
-	t_contet	*tmp = NULL;
+	t_stack	*node = NULL;
+	t_stack	*tmp = NULL;
 
-	node = stacj_a;
+	node = *stack_a;
 	while (node)
 	{
 		tmp = node->next;
@@ -40,23 +40,23 @@ void	free_a(t_stack **stack_a)
 		node = tmp;
 	}
 	free(tmp);
-	free(stack_a);
+	free(*stack_a);
 }
 
 void	free_b(t_stack **stack_b)
 {
-	t_contet	*node = NULL;
-	t_contet	*tmp = NULL;
+	t_stack	*node = NULL;
+	t_stack	*tmp = NULL;
 
-	node = stack_b;
+	node = *stack_b;
 	while (node)
 	{
 		tmp = node->next;
 		free(node);
-		mode = tmp;
+		node = tmp;
 	}
 	free(tmp);
-	free(stack_b);
+	free(*stack_b);
 }
 
 void	free_data(t_contet *data)
