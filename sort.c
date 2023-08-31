@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:42:18 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/31 20:02:46 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:22:36 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort3(t_stack **stack_a)
 	max = node_max(stack_a);
 	if (head->idx == max->idx)
 		ra(stack_a);
-	else if (head->idx == max->idx)
+	else if (head->next->idx == max->idx)
 		rra(stack_a);
 	head = *stack_a;
 	if (head->value > head->next->value)
@@ -58,7 +58,7 @@ void	sort4(t_stack **stack_a, t_stack **stack_b)
 	t_stack *min;
 	
 	min = node_min(stack_a);
-	put_stack_to_a(stack_a, min);
+	put_stack_top_a(stack_a, min);
 	pb(stack_b, stack_a);
 	sort3(stack_a);
 	pa(stack_a, stack_b);
@@ -69,7 +69,7 @@ void	sort5(t_stack **stack_a, t_stack **stack_b)
 	t_stack *min;
 
 	min = node_min(stack_a);
-	put_stack_to_a(stack_a, min);
+	put_stack_top_a(stack_a, min);
 	pb(stack_b, stack_a);
 	sort4(stack_a, stack_b);
 	pa(stack_a, stack_b);

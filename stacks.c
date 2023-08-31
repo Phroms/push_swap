@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:47:43 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 14:36:15 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:28:20 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_stack_init(t_stack **stack_a, t_contet *data)
 	while (i < data->elementos)
 	{
 		nbr = (int)data->arr[i];
-		if (!(addnode_back(stack_a, new_node(nbr, -1))))
+		if (!(add_back(stack_a, stack_new(nbr, -1))))
 		{
 			free_a(stack_a);
 			return ;
@@ -39,7 +39,7 @@ int	size_stack(t_stack *stack)
 	i = 0;
 	while (stack->next)
 	{
-		stack->next;
+		stack = stack->next;
 		i++;
 	}
 	return (i);

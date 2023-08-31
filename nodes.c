@@ -6,13 +6,13 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:02:23 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/31 19:42:15 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:33:38 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*lst_new(int idx, int value)
+t_stack	*stack_new(int idx, int value)
 {
 	t_stack *new_stack;
 
@@ -25,17 +25,23 @@ t_stack	*lst_new(int idx, int value)
 	return (new_stack);
 }
 
-void	add_back(t_stack **stack, t_stack *new)
+t_stack	*add_back(t_stack **stack, t_stack *new)
 {
-	t_stack *node;
+	t_stack *node = NULL;
 
 	if (!*stack)
 	{
-		*stack = new;
-		return ;
+		free_a(stack);
+		return (NULL);
+	}
+	if (*stack == NULL)
+	{
+		*stack = node;
+		return (*stack);
 	}
 	node = stack_last(*stack);
 	node->next = new;
+	return (*stack);
 }
 
 t_stack	*stack_last(t_stack *stack)
@@ -49,7 +55,7 @@ t_stack	*stack_last(t_stack *stack)
 	return (stack);
 }
 
-t_stack	node_max(t_stack **stack)
+t_stack	*node_max(t_stack **stack)
 {
 	t_stack	*max;
 	t_stack	*tmp;
@@ -62,10 +68,10 @@ t_stack	node_max(t_stack **stack)
 			max = tmp;
 		tmp = tmp->next;
 	}
-	return (*max);
+	return (max);
 }
 
-t_stack	node_min(t_stack **stack)
+t_stack	*node_min(t_stack **stack)
 {
 	t_stack	*min;
 	t_stack	*tmp;
@@ -78,5 +84,5 @@ t_stack	node_min(t_stack **stack)
 			min = tmp;
 		tmp = tmp->next;
 	}
-	return (*min);
+	return (min);
 }
