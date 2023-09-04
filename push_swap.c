@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 19:10:47 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/30 23:19:34 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:48:10 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	*stack_b = NULL;
 	if (!stack_a || !stack_b)
 		ft_free_input(data);
-	ft_stack_init(stack_a, &data);
+	ft_stack_init(stack_a, data);
 	sort(stack_a, stack_b);
 	data->elementos = argc - 1;
 	free_all(stack_a, stack_b, data);

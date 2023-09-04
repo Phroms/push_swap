@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 18:10:11 by agrimald          #+#    #+#              #
-#    Updated: 2023/08/31 18:31:29 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/04 17:39:05 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ ${NAME}: ${OBJECTS} ${PUSH} Makefile
 
 clean:
 	@rm -rf *.d
-	@rm -rf *.c
+	@rm -rf *.o
 	@printf "cleaned push_swap\n"
 
 fclean: clean
