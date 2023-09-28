@@ -5,60 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 15:02:23 by agrimald          #+#    #+#             */
-/*   Updated: 2023/08/31 20:33:38 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/28 21:22:57 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/28 21:35:44 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*stack_new(int idx, int value)
+t_stack	*new_node(int value)
 {
-	t_stack *new_stack;
+	t_stack	*new_node;
 
-	new_stack = malloc(sizeof(t_stack));
-	if (!new_stack)
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_node)
 		return (NULL);
-	new_stack->idx = idx;
-	new_stack->value = value;
-	new_stack->next = NULL;
-	return (new_stack);
+	new_node->index = -1;
+	new_node->value = value;
+	new_node->next = NULL;
+	return (new_node);
 }
 
-t_stack	*add_back(t_stack **stack, t_stack *new)
+void	ft_lstadd_back(t_stack **stack, t_stack *new)
 {
-	t_stack *node = NULL;
+	t_stack *n;
 
-	if (!*stack)
+	if (*stack)
 	{
-		free_a(stack);
-		return (NULL);
+		n = ft_lstlast(*stack);
+		n->next = new;
+		new->next = NULL;
 	}
-	if (*stack == NULL)
+	else
 	{
-		*stack = node;
-		return (*stack);
+		*stack = new;
+		(*stack)->next = NULL;
 	}
-	node = stack_last(*stack);
-	node->next = new;
-	return (*stack);
 }
 
-t_stack	*stack_last(t_stack *stack)
+t_stack	*ft_lstlast(t_stack *head)
 {
-	while (stack)
+	t_stack *tmp;
+
+	tmp = head;
+	while (tmp->next)
 	{
-		if (stack->next == NULL)
-			return (stack);
-		stack = stack->next;
+		tmp = tmp->next;
+		if (tmp->next == NULL)
+			return (tmp);
 	}
-	return (stack);
+	return (tmp);
 }
 
 t_stack	*node_max(t_stack **stack)
 {
-	t_stack	*max;
 	t_stack	*tmp;
+	t_stack	*max;
 
 	tmp = *stack;
 	max = tmp;
