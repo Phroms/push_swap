@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 21:35:49 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/28 21:43:41 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:54:51 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,4 @@ int	pb(t_stack **stack_a, t_stack **stack_b)
 		return (-1);
 	write(1, "pb\n", 3);
 	return (0);
-
 }

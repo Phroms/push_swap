@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/28 21:43:43 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/05 20:28:25 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,14 @@ t_stack	*node_min(t_stack **stack);
 int	push(t_stack **stack_to, t_stack **stack_from);
 int	pa(t_stack **stack_a, t_stack **stack_b);
 int	pb(t_stack **stack_a, t_stack **stack_b);
+
+	/* Radix */
+
+void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+void	stack_size(t_stack *stack);
+
+	/* Rotate */
+
+
 
 #endif
