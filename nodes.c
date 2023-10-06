@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 21:22:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/28 21:35:44 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:58:50 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	*new_node(int value)
 
 void	ft_lstadd_back(t_stack **stack, t_stack *new)
 {
-	t_stack *n;
+	t_stack	*n;
 
 	if (*stack)
 	{
@@ -44,7 +44,7 @@ void	ft_lstadd_back(t_stack **stack, t_stack *new)
 
 t_stack	*ft_lstlast(t_stack *head)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = head;
 	while (tmp->next)

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 21:02:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/28 21:22:28 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:57:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	data_init(t_contet *data, int argc)
 {
 	data->elementos = argc - 1;
-	data->smallest - INT_MAX;
+	data->smallest = INT_MAX;
 	data->biggest = INT_MIN;
 	data->sorted = 0;
-	data->index = 0;
+	data->idx = 0;
 }
 
 void	stack_init(t_stack **stack_a, char **argv)
@@ -30,7 +30,7 @@ void	stack_init(t_stack **stack_a, char **argv)
 	while (argv[i])
 	{
 		new = new_node(ft_atoi(argv[i]));
-		ft_lstaadd_back(stack_a, new);
+		ft_lstadd_back(stack_a, new);
 		i++;
 	}
 	index_init(stack_a);
@@ -63,7 +63,7 @@ void	check_argv(int argc, char *s)
 	if (argc < 2)
 		exit(1);
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == '-' && (s[i + 1] <= '9' || s[i + 1] >= '0'))
 			i++;

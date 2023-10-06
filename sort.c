@@ -6,11 +6,16 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:14:05 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/05 20:28:19 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:00:32 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_2(t_stack **stack_a);
+void	sort_3(t_stack **stack_a);
+void	sort_4(t_stack **stack_a, t_stack **stack_b);
+void	sort_5(t_stack **stack_a, t_stack **stack_b);
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
@@ -56,7 +61,7 @@ void	sort_3(t_stack **stack_a)
 
 void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *min;
+	t_stack	*min;
 
 	min = node_min(stack_a);
 	put_node_top_a(stack_a, min);
@@ -67,7 +72,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 
 void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *min;
+	t_stack	*min;
 
 	min = node_min(stack_a);
 	if (min->next == NULL)

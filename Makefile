@@ -6,14 +6,15 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 18:10:11 by agrimald          #+#    #+#              #
-#    Updated: 2023/10/05 20:28:23 by agrimald         ###   ########.fr        #
+#    Updated: 2023/10/06 16:54:15 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra -g -MMD
 PUSH = push_swap.h
-SRC = 
+SRC = free.c index.c input.c main.c nodes.c push.c radix.c rotate.c sort.c \
+	  	sort_utils.c swap.c
 
 OBJECTS = $(SRC:.c=.o)
 DEPS = $(patsubst%.o,%.d,$(OBJECTS))

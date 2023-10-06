@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:55:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/05 20:28:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:54:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 typedef struct	s_stack
 {
 	int value; // es el valor del nodo;
-	int idx; // es index y es el indice del nodo;
+	int index; // es index y es el indice del nodo;
 	struct	s_stack *next;
 }t_stack;
 
@@ -41,6 +41,10 @@ typedef struct	s_contet
 	/* Comienzo del push_swap */
 
 int main(int argc, char **argv);
+
+	/* Free */
+
+void	free_stack(t_stack **stack);
 		
 	/* Input */
 
@@ -80,10 +84,36 @@ int	pb(t_stack **stack_a, t_stack **stack_b);
 	/* Radix */
 
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
-void	stack_size(t_stack *stack);
+int		stack_size(t_stack *stack);
 
 	/* Rotate */
 
+int		rotate(t_stack **stack);
+int		reverse_rot(t_stack **stack);
+int		ra(t_stack **stack_a);
+int		rra(t_stack **stack_a);
+int		rb(t_stack **stack_a);
 
+	/* Sort */
+
+void	sort(t_stack **stack_a, t_stack **stack_b);
+void	sort_2(t_stack **stack_a);
+void	sort_3(t_stack **stack_a);
+void	sort_4(t_stack **stack_a, t_stack **stack_b);
+void	sort_5(t_stack **stack_a, t_stack **stack_b);
+
+	/* Sort Utils */
+
+int		put_node_top_a(t_stack **stack_a, t_stack *stack);
+int		put_node_top_b(t_stack **stack_b, t_stack *stack);
+int		stack_sorted(t_stack **stack);
+t_stack *stack_end(t_stack **stack);
+
+	/* Swap */
+
+int		swap(t_stack **stack);
+int		sa(t_stack **stack_a);
+int		sb(t_stack **stack_b);
+int		ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif

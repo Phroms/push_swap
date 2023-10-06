@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 20:15:20 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/28 20:15:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:57:31 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,16 @@ int	check_num(char *argv)
 	return (0);
 }
 
-
 int	check_rep(long tmp, char **argv, int i, t_contet *data)
 {
 	i++;
 	while (argv[i])
 	{
 		if (ft_atoi(argv[i]) == tmp)
-				return (1);
+			return (1);
 		if (tmp > data->biggest)
 			data->biggest = tmp;
-		else if (tmp < data->samllest)
+		else if (tmp < data->smallest)
 			data->smallest = tmp;
 		i++;
 	}
@@ -56,7 +55,7 @@ void	input_parse(t_contet *data, char **argv)
 		tmp = ft_atoi(argv[i]);
 		if (check_num(argv[i]))
 			ft_error();
-		if (check_rep(tm, argv, i, data))
+		if (check_rep(tmp, argv, i, data))
 			ft_error();
 		if (tmp < INT_MIN || tmp > INT_MAX)
 			ft_error();
@@ -66,9 +65,9 @@ void	input_parse(t_contet *data, char **argv)
 
 long	ft_atoi(const char *str)
 {
+	int		signo;
+	long	i;
 	long	resultado;
-	int			signo;
-	long			i;
 
 	resultado = 0;
 	signo = 1;

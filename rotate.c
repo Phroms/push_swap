@@ -6,16 +6,16 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:59:31 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/05 20:13:40 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:00:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int rotate(t_stack **stack)
+int	rotate(t_stack **stack)
 {
-	t_stack *head;
-	t_stack *tail;
+	t_stack	*head;
+	t_stack	*tail;
 
 	if (stack_size(*stack) < 2)
 		return (-1);
@@ -29,8 +29,8 @@ int rotate(t_stack **stack)
 
 int	reverse_rot(t_stack **stack)
 {
-	t_stack *head;
-	t_stack *tail;
+	t_stack	*head;
+	t_stack	*tail;
 
 	if (stack_size(*stack) < 2)
 		return (-1);
@@ -50,7 +50,7 @@ int	reverse_rot(t_stack **stack)
 	return (0);
 }
 
-int ra(t_stack **stack_a)
+int	ra(t_stack **stack_a)
 {
 	if (rotate(stack_a) == -1)
 	{
