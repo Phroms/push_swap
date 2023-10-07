@@ -5,41 +5,54 @@
 #                                                     +:+ +:+         +:+      #
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/30 18:10:11 by agrimald          #+#    #+#              #
-#    Updated: 2023/10/06 16:54:15 by agrimald         ###   ########.fr        #
+#    Created: 2023/10/07 11:33:23 by agrimald          #+#    #+#              #
+#    Updated: 2023/10/07 14:54:22 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CFLAGS = -Wall -Werror -Wextra -g -MMD
-PUSH = push_swap.h
-SRC = free.c index.c input.c main.c nodes.c push.c radix.c rotate.c sort.c \
-	  	sort_utils.c swap.c
 
-OBJECTS = $(SRC:.c=.o)
-DEPS = $(patsubst%.o,%.d,$(OBJECTS))
+SRC_PATH = ./src
+INC_PATH = ./inc
+
+SRCS = $(addprefix $(SRC_PATH)/, array3.c \
+	   array4.c \
+	   array5.c \
+	   ft_atoi.c \
+       pa.c \
+       pb.c \
+       push_swap.c \
+       rr.c \
+       rrr.c \
+       ss.c \
+	   set_index.c \
+	   errors.c \
+	   split_chunks.c \
+	   werror.c)
+
+CC = cc
+RM = rm- f
+CFLAGS = -Wall -Werror -Wextra
+
+%.o: %.c
+		@${CC} ${CFLAGS} -c $< -o $@
+
+OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}
 
-%.o: %.c
-	@printf "\rCompiling push_swap: $< \n"
-	$(CC) -c ${CFLAGS} $< -o $@
-
-${NAME}: ${OBJECTS} ${PUSH} Makefile
-		cc ${CFLAGS} -o ${NAME} ${OBJECTS}
-		@printf "program compile succesfully!\n"
+${NAME}: ${OBJS}
+		@${CC} ${SRCS} -o ${NAME}
+		@echo "Everything Done! :D"
 
 clean:
-	@rm -rf *.d
-	@rm -rf *.o
-	@printf "cleaned push_swap\n"
+		@${RM} ${OBJS}
+		@echo "Objects Remove 🗑 "
 
-fclean: clean
-		@rm ${NAME}
-		@printf "cleaned object files!\n"
+fclean:
+		@${RM} ${OBJS}
+		@echo "Everythings Remove 🗑 "
 
 re: fclean all
 
--include $(DEPS)
-
-.PHONY: clean all fclean re
+.PHONY: all clean fclean re
