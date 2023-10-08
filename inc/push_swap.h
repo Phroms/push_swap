@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:33:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:16:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:16:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 	/* Estructura */
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int	*sa;
 	int	*sb;
@@ -37,7 +37,7 @@ typedef struct	s_stack
 
 int		check_arguments(int argc, char **argv, t_stack *stack);
 
-	/* Werror */ 
+	/* Werror */
 
 void	ft_werror(void);
 
@@ -64,14 +64,14 @@ void	pa(t_stack *stack);
 
 	/* Pb */
 
-void	pb (t_stack *stack);
+void	pb(t_stack *stack);
 
 	/* Push_swap.c */
 
 void	ft_free(t_stack *stack);
 int		main(int argc, char **argv);
 
-	/* Rr */ 
+	/* Rr */
 
 void	rr(t_stack *stack, char r_a_b);
 

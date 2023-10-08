@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 13:34:46 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:02:47 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:04:08 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 static int	is_duplicate(int argc, char **argv, t_stack *stack)
 {
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 1;
 	while (i < argc)
 	{
 		j = 1;
 		tmp = ft_atoi(argv[i], stack);
-	   while (j < argc)
-	   {
-		   if (i != j && tmp == ft_atoi(argv[j], stack))
-			   return (0);
-		   j++;
-	   }
-	   i++;
+		while (j < argc)
+		{
+			if (i != j && tmp == ft_atoi(argv[j], stack))
+				return (0);
+			j++;
+		}
+		i++;
 	}
 	return (1);
 }
 
 static int	is_number(char *argv)
 {
-	int i;
+	int	i;
 
 	if (argv[0] == '\0')
 		return (0);
@@ -52,7 +52,7 @@ static int	is_number(char *argv)
 
 static int	is_correct_input(char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (argv[i])
@@ -66,7 +66,7 @@ static int	is_correct_input(char **argv)
 
 static int	is_order(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stack->len - 1)

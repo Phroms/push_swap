@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:41:31 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:18:27 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:09:35 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rra(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->len_a - 1;
 	while (i > 0)

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:42:41 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:08:44 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:05:51 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap(int *a1, int *a2)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a1;
 	*a1 = *a2;
@@ -23,7 +23,7 @@ void	swap(int *a1, int *a2)
 
 void	pa(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->len_a;
 	stack->len_a = stack->len_a + 1;

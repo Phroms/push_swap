@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:52:56 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:25:13 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:10:21 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ static int	aux_rrr(t_stack *stack, int aux_exit, int i)
 
 void	solve(t_stack *stack)
 {
-	int i;
-	int aux;
+	int	i;
+	int	aux;
 	int	aux_exit;
 
 	aux = stack->len;

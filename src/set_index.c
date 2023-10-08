@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:48:20 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:19:39 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:10:02 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	set_index(t_stack *stack)
 {
-	int i;
-	int j;
-	int new_index;
-	
+	int	i;
+	int	j;
+	int	new_index;
+
 	i = -1;
 	while (i++ < stack->len)
 		stack->saux[i] = stack->sa[i];

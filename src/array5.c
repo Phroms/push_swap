@@ -6,13 +6,13 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:15:47 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 13:57:59 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:01:54 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static int f_aux(int *a, t_stack *stack, int aux)
+static int	f_aux(int *a, t_stack *stack, int aux)
 {
 	if (a[0] > a[2] && a[1] > a[2] && a[2] < a[3] && a[2] < a[4] && aux == 0)
 	{
@@ -41,7 +41,7 @@ static int f_aux(int *a, t_stack *stack, int aux)
 
 void	array5(int *a, t_stack *stack)
 {
-	int aux;
+	int	aux;
 
 	aux = 0;
 	if (a[0] < a[1] && a[0] < a[2] && a[0] < a[3] && a[0] < a[4] && aux == 0)

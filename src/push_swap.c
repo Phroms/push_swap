@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:59:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:15:16 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:08:48 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	create_stack(int argc, char **argv, t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (argc > 1)
@@ -77,7 +77,7 @@ void	push_swap(t_stack *stack)
 		set_index(stack);
 	if (stack->len > 5 && stack->len <= 20)
 	{
-		split_chunks(stack , 2);
+		split_chunks(stack, 2);
 		solve(stack);
 	}
 	if (stack->len > 20)
@@ -102,7 +102,7 @@ void	ft_free(t_stack *stack)
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
 	if (argc == 1)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:18:25 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:26:17 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:10:35 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(int *sa)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = sa[0];
 	sa[0] = sa[1];

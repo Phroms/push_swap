@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:52:35 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/08 14:08:27 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:06:10 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pb(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->len_b;
 	stack->len_b = stack->len_b + 1;
