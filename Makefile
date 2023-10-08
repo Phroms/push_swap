@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 11:33:23 by agrimald          #+#    #+#              #
-#    Updated: 2023/10/07 14:54:22 by agrimald         ###   ########.fr        #
+#    Updated: 2023/10/08 13:47:43 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS = $(addprefix $(SRC_PATH)/, array3.c \
 	   werror.c)
 
 CC = cc
-RM = rm- f
+RM = rm -f
 CFLAGS = -Wall -Werror -Wextra
 
 %.o: %.c
@@ -50,7 +50,7 @@ clean:
 		@echo "Objects Remove 🗑 "
 
 fclean:
-		@${RM} ${OBJS}
+		@${RM} ${OBJS} ${NAME}
 		@echo "Everythings Remove 🗑 "
 
 re: fclean all

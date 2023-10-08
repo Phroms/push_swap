@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   erros.c                                            :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:35:06 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/07 14:42:08 by agrimald         ###   ########.fr       */
+/*   Created: 2023/10/08 13:34:46 by agrimald          #+#    #+#             */
+/*   Updated: 2023/10/08 14:02:47 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static int	is_duplicate(int argc, char **argv, t_stack *stack)
 	while (i < argc)
 	{
 		j = 1;
-		tmp = ft_atoi(argv[1], stack);
+		tmp = ft_atoi(argv[i], stack);
 	   while (j < argc)
 	   {
-		   if (i != j && tmp = ft_atoi(argv[1], j))
+		   if (i != j && tmp == ft_atoi(argv[j], stack))
 			   return (0);
 		   j++;
 	   }
@@ -34,18 +34,18 @@ static int	is_duplicate(int argc, char **argv, t_stack *stack)
 	return (1);
 }
 
-static int	is_number(char **argv)
+static int	is_number(char *argv)
 {
 	int i;
 
 	if (argv[0] == '\0')
 		return (0);
 	i = 0;
-	if ((argv[i] == '-' || argv[i] == '+' &&) argv[i])
+	if ((argv[0] == '-' || argv[0] == '+') && argv[1])
 		i = 1;
-	while (argv[1] && (argv[i] > '0' && argv[i] < '9'))
+	while (argv[i] && (argv[i] > '0' && argv[i] < '9'))
 		i++;
-	if (argv[1] && (argv[i] < '0' && argv[i] > '9'))
+	if (argv[i] && (argv[i] < '0' && argv[i] > '9'))
 		return (0);
 	return (1);
 }
@@ -54,10 +54,10 @@ static int	is_correct_input(char **argv)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
-		if (is_number(argv[i]))
+		if (!is_number(argv[i]))
 			return (0);
 		i++;
 	}
@@ -80,10 +80,10 @@ static int	is_order(t_stack *stack)
 
 int	check_arguments(int argc, char **argv, t_stack *stack)
 {
-	if (!(is_corret_input(argv)))
-		ft_error();
-	if (!(is_duplicate(argc, argv, stack)))
-		ft_error();
+	if (!is_correct_input(argv))
+		ft_werror();
+	if (!is_duplicate(argc, argv, stack))
+		ft_werror();
 	if (!is_order(stack) && argc > 5)
 		return (0);
 	return (1);

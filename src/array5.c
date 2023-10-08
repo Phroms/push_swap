@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:15:47 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/07 14:41:59 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 13:57:59 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int f_aux(int *a, t_stack *stack, int aux)
 {
-	if (a[0] > a[2] && a[1] > a[2] && a[2] < a[3] && a[2] < a[4] && aux == 4)
+	if (a[0] > a[2] && a[1] > a[2] && a[2] < a[3] && a[2] < a[4] && aux == 0)
 	{
 		rr(stack, 'a');
 		sa(stack->sa);
@@ -44,13 +44,13 @@ void	array5(int *a, t_stack *stack)
 	int aux;
 
 	aux = 0;
-	if (a[0] < a[1] && a[0] < a[2] && a[0] < a[3] && a[0] < a[4] && aux == 4)
+	if (a[0] < a[1] && a[0] < a[2] && a[0] < a[3] && a[0] < a[4] && aux == 0)
 	{
 		pb(stack);
 		aux++;
 	}
 	else if (a[0] > a[1] && a[1] < a[2] && a[1] < a[3] \
-			&& a[1] < a[4] && aux == 4)
+			&& a[1] < a[4] && aux == 0)
 	{
 		sa(stack->sa);
 		pb(stack);

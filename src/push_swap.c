@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:59:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/07 14:51:44 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 14:15:16 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	create_stack(int argc, char **argv, t_stack *stack)
 	while (argc > 1)
 	{
 		if (argv[i + 1][0] == '0' && argv[i + 1][1] == '\0')
-			stack->sa[i] =0;
+			stack->sa[i] = 0;
 		else
 		{
 			stack->sa[i] = ft_atoi(argv[i + 1], stack);
@@ -62,7 +62,7 @@ int	init_list(int argc, t_stack *stack)
 	stack->len = argc - 1;
 	stack->len_a = argc - 1;
 	stack->len_b = 0;
-	return (0);
+	return (1);
 }
 
 void	push_swap(t_stack *stack)
@@ -77,7 +77,7 @@ void	push_swap(t_stack *stack)
 		set_index(stack);
 	if (stack->len > 5 && stack->len <= 20)
 	{
-		split_chunks(stack ,2);
+		split_chunks(stack , 2);
 		solve(stack);
 	}
 	if (stack->len > 20)

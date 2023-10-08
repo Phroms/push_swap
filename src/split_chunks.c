@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:52:56 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/07 14:43:07 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 14:25:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	split_chunks(t_stack *stack, int num)
 	aux = cut_num;
 	while (num-- > 0)
 	{
-		while (i < cut_num && stack>len_a > 0)
+		while (i < cut_num && stack->len_a > 0)
 		{
 			if (stack->sa[0] <= cut_num)
 			{
@@ -60,10 +60,10 @@ static int	aux_rr(t_stack *stack, int aux_exit, int i)
 
 static int	aux_rrr(t_stack *stack, int aux_exit, int i)
 {
-	i = stack->len_b - 1;
+	i = stack->len_b - i;
 	while (i > 0 && aux_exit == 0)
 	{
-		if (stack->sb[0] == stack_len_b - 1 && stack_memsolv == 0)
+		if (stack->sb[0] == stack->len_b - 1 && stack->memsolv == 0)
 		{
 			pa(stack);
 			i--;
@@ -74,6 +74,7 @@ static int	aux_rrr(t_stack *stack, int aux_exit, int i)
 		}
 		if (aux_exit == 0)
 			rrr(stack, 'b');
+		i--;
 	}
 	return (aux_exit);
 }

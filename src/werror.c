@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:57:34 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/07 14:43:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 14:26:35 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_werror(void)
 {
-	write(1, "Error\n", 6);
-	exit(0);
+	write(2, "Error\n", 6);
+	exit (0);
 }

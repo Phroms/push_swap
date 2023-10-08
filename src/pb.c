@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:52:35 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/07 14:44:47 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/08 14:08:27 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	pb(t_stack *stack)
 	i = stack->len_b;
 	stack->len_b = stack->len_b + 1;
 	stack->len_a = stack->len_a - 1;
-	while (i < 0)
+	while (i > 0)
 	{
 		swap(&stack->sb[i], &stack->sb[i - 1]);
 		i--;
